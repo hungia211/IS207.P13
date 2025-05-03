@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Profile_style.css">
+    <link rel="stylesheet" href="../Mutual_Design/style.css">
+    <script src="https://kit.fontawesome.com/9d53f4751e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="navbar w-nav">
+        <div class="nav-content-grid">
+            <div class="nav-link-left">
+
+                <!-- Này là cái icon menu lúc đầu nó ẩn khi về 991px thì nó hiện lên -->
+                <div id="menu-non-desktop" class="menu-button-lower-desktop w-nav-button" aria-label="menu"
+                    role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu"
+                    aria-expanded="false">
+                    <div class="lottie-animation">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+
+                <!-- Cái này dùng để hiện lên lúc responsive
+                 sau khi responsive nhớ bỏ menu vào chỗ này -->
+                <div class="search-range hide-1">
+                    <!-- Search Bar -->
+                    <form action="/search" method="get" class="search-form">
+                        <div class="search-bar">
+                            <input type="text" name="query" placeholder="Tìm kiếm..." class="search-input">
+                            <button type="submit" class="search-icon-button">
+                                <i class="fas fa-search search-icon"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Hai cái dive block-l này nhớ chèn 1 cái logo và 1 cái search -->
+                <!-- Này là nút đăng xuất, chỉ hiện lên khi kiểm tra trạng thái đã đăng nhập -->
+                <div class="menu-content-logo hide-block-l" style="border-right: 1px solid #121212;">
+                    <a href="../Home/Home.html" class="links w-inline-block">
+                        <div class="link-text top-text">Nhà Có Hoa</div>
+                        <div class="link-text bottom-text">Nhà Có Hoa</div>
+                    </a>
+                </div>
+                <!-- Này là thanh search -->
+                <div class="menu-content-search hide-block-l">
+                    <form action="/search" method="get" class="search-form">
+                        <div class="search-bar">
+                            <input type="text" name="query" placeholder="Tìm kiếm..." class="search-input">
+                            <button type="submit" class="search-icon-button">
+                                <i class="fas fa-search search-icon"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="nav-link-right">
+
+                <!-- Cái chõ này là sau khi về 991px thì nó hiện lên như là khoảng trắng -->
+                <div class="plug-w100-r hide-1"></div>
+
+                <!-- Này là cái incon giỏ hàng lúc đầu nó ẩn xong khi về 991px nó hiện -->
+                <div class="cart-button-lower-desktop"><img
+                        src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/649c824defd18fb4cfaba780_svg.svg"
+                        loading="lazy" height="Auto" width="Auto" alt="" class="icon24"></div>
+
+                <!-- Cái này sau khi responsive thì nó sẽ bị ẩn đi  -->
+                <div class="nav-link-wrap">
+                    <div class="link-block-wrap">
+                        <a href="../Shop/Shop.html" id="shop-link" class="links w-inline-block">
+                            <div class="link-text top-text">Cửa Hàng</div>
+                            <div class="link-text bottom-text">Cửa Hàng</div>
+                        </a>
+                    </div>
+
+                    <div class="link-block-wrap border-l">
+                        <a href="#" class="links w-inline-block">
+                            <div class="link-text top-text">Blog</div>
+                            <div class="link-text bottom-text">Blog</div>
+                        </a>
+                    </div>
+
+                    <div class="link-block-wrap border-l">
+                        <a href="#" id="cartlink" class="links w-inline-block">
+                            <div class="link-text top-text">Giỏ Hàng</div>
+                            <div class="link-text bottom-text">Giỏ Hàng</div>
+                        </a>
+                    </div>
+
+                    <!--Nút đăng nhập và Nút thông tin cá nhân-->
+                    <div class="link-block-wrap border-l">
+                        <a href="../SignIn/sign_in_sign_up.html" id="login-link" class="links w-inline-block hidden">
+                            <div class="link-text top-text">Đăng Nhập</div>
+                            <div class="link-text bottom-text">Đăng Nhập</div>
+                        </a>
+                        <a href="#" id="info-link" class="links w-inline-block">
+                            <div class="link-text top-text font-weight-600">Tài khoản</div>
+                            <div class="link-text bottom-text font-weight-600">Tài khoản</div>
+                        </a>
+                        <!--Menu của Nút tài khoản-->
+                        <div id="account-menu" class="account-menu hidden">
+                            <ul>
+                                <li class="link-block-wrap">
+                                    <a href="../Profile/Profile.html" id="info-link" class="links w-inline-block">
+                                        <div class="link-text top-text">Thông tin</div>
+                                        <div class="link-text bottom-text">Thông tin</div>
+                                    </a>
+                                </li>
+
+                                <li class="link-block-wrap">
+                                    <a href="#" id="logout-link" class="links w-inline-block" onclick="logout()">
+                                        <div class="link-text top-text">Đăng xuất</div>
+                                        <div class="link-text bottom-text">Đăng xuất</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Này là giao diện của thanh điều ẩn khi về 991px và khi nhấn vào icon menu nó hiện ra -->
+                <div class="hide-2">
+                    <a href="../SignIn/sign_in_sign_up.html"
+                        class="nav-link-copy-100 burger_mobile w-nav-link w--nav-link-open">Đăng Nhập</a>
+                    <a href="../TrangChu_Category/TrangChu_Category.html"
+                        class="nav-link-copy-100 burger_mobile w-nav-link w--nav-link-open">Cửa Hàng </a>
+                    <a href="#" class="nav-link-copy-100 burger_mobile w-nav-link w--nav-link-open">Dịch Vụ</a>
+                    <a href="#" class="nav-link-copy-100 burger_mobile w-nav-link w--nav-link-open">Liên Hệ</a>
+                    <a href="#" class="nav-link-copy-100 burger_mobile w-nav-link w--nav-link-open">Giới Thiệu </a>
+                    <div class="wrap-hide-desktop">
+                        <a href="#" class="caption"> Giao Hàng &amp; Hoàn Trả</a>
+                        <a href="#" class="caption"> Điều Khoản &amp; Điều Kiện</a>
+                        <a href="#" class="caption"> Chính sách bảo mật</a>
+                    </div>
+                    <div class="icon-wrap-hide-desktop">
+                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e144ecf86c56_Instagram.svg"
+                            loading="lazy" width="24" height="24" alt="store photo" class="icon24" />
+                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1d70bf86c58_Pinterest.svg"
+                            loading="lazy" width="24" height="24" alt class="icon24" />
+                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e16d07f86c59_Facebook.svg"
+                            loading="lazy" width="24" height="24" alt class="icon24" />
+                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1cb4ef86c57_Twitter.svg"
+                            loading="lazy" width="24" height="24" alt class="icon24" />
+                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e17d93f86c5a_Telegram.svg"
+                            loading="lazy" width="24" height="24" alt class="icon24" />
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Giao diện giỏ hàng -->
+    <div class="detail-of-cart">
+        <div class="header">
+            <p>Giỏ hàng</p>
+            <button id="closeCartBtn" class="close-cart">&times;</button>
+        </div>
+
+        <!-- Phần chứa sản phẩm -->
+        <div class="add-product">
+            <div id="cart-items-container">
+                <!-- Các sản phẩm sẽ được thêm động tại đây từ JavaScript -->
+            </div>
+        </div>
+
+        <!-- Tổng giá trị -->
+        <div class="subtotal-block">
+            <p class="subtotal-label">Tổng tiền</p>
+            <p id="subtotal-value" class="subtotal-value">0 VND</p>
+        </div>
+
+        <!-- Tin nhắn quà tặng -->
+        <div class="gift-message">
+            <textarea id="gift-message" class="gift-message-textarea"
+                placeholder=" Viết thông điệp quà tặng của bạn ở đây "></textarea>
+        </div>
+
+        <!-- Thông báo giao hàng -->
+        <div class="delivery-message">
+            <p>Miễn phí vận chuyển tiêu chuẩn trong khu vực TP. Hồ Chí Minh.</p>
+        </div>
+
+        <!-- Nút thanh toán -->
+        <div class="btn-block-wrap-1 margin-top-10px">
+            <div class="primary-button">
+                <a href="../Payment/informantion.html" class="links w-inline-block">
+                    <div class="link-text top-btn-text">THANH TOÁN</div>
+                    <div class="link-text bottom-btn-text">THANH TOÁN</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Giao diện chính -->
+    <div class="main">
+
+        <!-- Phần thông tin cá nhân -->
+        <div class="profile-part">
+            <div class="title-wrap">
+                <h4>THÔNG TIN CÁ NHÂN</h4>
+            </div>
+            <div class="profile-image-part">
+                <div class="profile-image">
+                    <img id="profile-image"
+                        src="https://cellphones.com.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg">
+                </div>
+            </div>
+            <div class="profile-info">
+                <p><span class="label-wrap">Họ và tên</span><b>:</b> <span id="full-name"></span></p>
+                <p><span class="label-wrap">Ngày sinh</span><b>:</b> <span id="birth-date"></span></p>
+                <p><span class="label-wrap">Giới tính</span><b>:</b> <span id="gender"></span></p>
+                <p><span class="label-wrap">Email</span><b>:</b> <span id="email"></span></p>
+                <p><span class="label-wrap">Số điện thoại</span><b>:</b> <span id="phone"></span></p>
+                <p><span class="label-wrap">Địa chỉ</span><b>:</b> <span id="address"></span></p>
+            </div>
+            <div class="profile-button">
+                <button class="btn-wrap" id="edit-button">Chỉnh sửa thông tin</button>
+                <button class="btn-wrap" id="change-password-button">Đổi mật khẩu</button>
+            </div>
+        </div>
+
+        <!-- Chỉnh sửa thông tin tài khoản -->
+        <div id="edit-account" style="display: none;">
+            <div class="edit-account-content">
+                <h4>Chỉnh sửa thông tin cá nhân</h4>
+                <form id="edit-account-form">
+                    <label for="edit-name">Họ và tên:</label>
+                    <input type="text" id="edit-name" name="name">
+
+                    <label for="edit-phone">Số điện thoại:</label>
+                    <input type="tel" id="edit-phone" name="phone">
+
+                    <label for="gender">Giới tính:</label>
+                    <select id="edit-gender" name="gender">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                    
+
+                    <label for="edit-birth-date">Ngày sinh:</label>
+                    <input type="date" id="edit-birth-date" name="birth_date">
+
+                    <label for="edit-address">Địa chỉ:</label>
+                    <input type="text" id="edit-address" name="address">
+
+                    <div class="edit-account-buttons">
+                        <button type="button" onclick="updateUserInfo()">Xác nhận</button>
+                        <button type="button" onclick="closeEditAccount()">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Đổi mật khẩu -->
+        <div id="change-password" style="display: none;">
+            <div class="change-password-content">
+                <h4>Đổi mật khẩu</h4>
+                <form id="change-password-form">
+                    <label for="current-password">Mật khẩu cũ:</label>
+                    <input type="password" id="current-password" name="current_password">
+
+                    <label for="new-password">Mật khẩu mới:</label>
+                    <input type="password" id="new-password" name="new_password" disabled>
+
+                    <label for="confirm-password">Xác nhận mật khẩu mới:</label>
+                    <input type="password" id="confirm-password" name="confirm_password" disabled>
+
+                    <div id="error-message" style="color: red; display: none;">Mật khẩu cũ không đúng!</div>
+
+                    <div class="change-password-buttons">
+                        <button type="button" onclick="updatePassword()">Xác nhận</button>
+                        <button type="button" onclick="closeChangePassword()">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Phần lịch sử đơn hàng -->
+        <div class="order-history-part">
+            <div class="title-wrap">
+                <h4>LỊCH SỬ ĐƠN HÀNG</h4>
+            </div>
+            <div class="order-history-detail">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Ngày đặt</th>
+                            <th>Tình trạng</th>
+                            <th>Chi tiết</th>
+                            <th>Hủy</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-history-tbody">
+                        <!-- Dữ liệu sẽ được thêm vào đây từ JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Xem chi tiết đơn hàng -->
+        <div id="order-details" class="order-details-modal" style="display: none;">
+            <div class="order-details-content">
+                <!-- Header bọc riêng -->
+                <div class="order-header-wrapper">
+                    <div class="order-header">
+                        <h4>Mã đơn: <span id="order-id"></span></h4>
+                        <button type="button" class="close-button" onclick="closeOrderDetails()"><i
+                                class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <!-- Nội dung chính có padding -->
+                <div class="order-details-wrapper">
+                    <div class="order-info">
+                        <div class="left-info">
+                            <p>Ngày đặt: <span id="order-date"></span></p>
+                            <p>Ngày giao: <span id="delivery-date"></span></p>
+                        </div>
+                        <div class="right-info">
+                            <p>Tình trạng: <span id="order-status"></span></p>
+                            <p>Tổng tiền: <span id="total-amount"></span></p>
+                        </div>
+                    </div>
+                    <div class="order-items">
+                        <!-- Các sản phẩm sẽ được hiển thị ở đây -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer border-bottom">
+        <!-- Cột footer thứ 1 -->
+        <div class="footer_column">
+            <div class="footer-note">
+                <p class="margin-bottom-24px note">Cảm ơn bạn đã ghé thăm shop hoa của chúng tôi! 🌸 </p>
+                <p class="margin-bottom-24px note">Mỗi bó hoa ở đây đều mang theo sự tận tâm và tình yêu với mong muốn
+                    làm đẹp thêm cuộc sống của bạn. Hy vọng rằng bạn đã có một trải nghiệm thật đáng nhớ. Nếu cần hỗ
+                    trợ, đừng ngần ngại liên hệ với chúng tôi nhé! 💐</p>
+            </div>
+
+            <div class="email-block">
+                <form>
+                    <input type="text" id="email-2" placeholder="Email của bạn">
+                    <div class="btn-block-wrap-1 margin-top-10px">
+                        <div class="primary-button">
+                            <a href="#" class="links w-inline-block">
+                                <div class="link-text top-btn-text">NHẮC NHỞ</div>
+                                <div class="link-text bottom-btn-text">NHẮC NHỞ</div>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Cột footer thứ 2 -->
+        <div class="footer_column">
+            <h5 class="text-gray margin-bottom-24px">Liên hệ với chúng tôi</h5>
+            <div class="footer_colum-wrap_links margin-bottom-16px">
+                <p class="caption text-gray">Địa chỉ</p>
+                <a href="#" class="links w-inline-block margin-bottom-24px padding-top-2px">
+                    <div class="link-text top-text">KTX khu A, Linh Trung,
+                        Thủ Đức, TP HCM</div>
+                    <div class="link-text bottom-text">KTX khu A, Linh
+                        Trung, Thủ Đức, TP HCM</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-16px">
+                <p class="caption text-gray">Số điện thoại</p>
+                <a href="#" class="links w-inline-block margin-bottom-24px padding-top-2px">
+                    <div class="link-text top-text">+8437xxxxxxx</div>
+                    <div class="link-text bottom-text">+8437xxxxxxx</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-16px">
+                <p class="caption text-gray">Gửi câu hỏi:</p>
+                <a href="#" class="links w-inline-block margin-bottom-24px padding-top-2px">
+                    <div class="link-text top-text">2252xxxx@gm.uit.edu.vn</div>
+                    <div class="link-text bottom-text">2252xxxx@gm.uit.edu.vn</div>
+                </a>
+            </div>
+            <h5 class="text-gray margin-bottom-24px">Theo dõi chúng tôi</h5>
+
+            <div class="flex_horizont-justify_start gap-32px">
+                <a href="#" class="link-block w-inline-block"><img
+                        src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e144ecf86c56_Instagram.svg"
+                        loading="lazy" width="24" height="24" alt="store photo" class="icon24"></a>
+                <a href="#" class="link-block w-inline-block"><img
+                        src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1d70bf86c58_Pinterest.svg"
+                        loading="lazy" width="24" height="24" alt class="icon24"></a>
+                <a href="#" class="link-block w-inline-block"><img
+                        src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e16d07f86c59_Facebook.svg"
+                        loading="lazy" width="24" height="24" alt class="icon24"></a>
+                <a href="#" class="link-block w-inline-block"><img
+                        src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1cb4ef86c57_Twitter.svg"
+                        loading="lazy" width="24" height="24" alt class="icon24"></a>
+                <a href="#" class="link-block-no-margin w-inline-block"><img
+                        src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e17d93f86c5a_Telegram.svg"
+                        loading="lazy" width="24" height="24" alt class="icon24"></a>
+            </div>
+        </div>
+        <!-- Cột footer thứ 3 -->
+        <div class="footer_column">
+            <h5 class="text-gray margin-bottom-24px">Cửa hàng</h5>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Tất cả Hoa</div>
+                    <div class="link-text bottom-text">Tất cả Hoa</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Hoa tươi</div>
+                    <div class="link-text bottom-text">Hoa tươi</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Hoa khô</div>
+                    <div class="link-text bottom-text">Hoa khô</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Cây sống</div>
+                    <div class="link-text bottom-text">Cây sống</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Bình cắm hoa</div>
+                    <div class="link-text bottom-text">Bình cắm hoa</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Nến thơm</div>
+                    <div class="link-text bottom-text">Nến thơm</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-24px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Freshener Diffuser</div>
+                    <div class="link-text bottom-text">Freshener Diffuser</div>
+                </a>
+            </div>
+            <h5 class="text-gray margin-bottom-24px">Dịch vụ</h5>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Đăng ký hoa</div>
+                    <div class="link-text bottom-text">Đăng ký hoa</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Trang trí Tiệc cưới và Sự kiện</div>
+                    <div class="link-text bottom-text">Trang trí Tiệc cưới và Sự kiện</div>
+                </a>
+            </div>
+        </div>
+        <!-- Cột footer thứ 4 -->
+        <div class="footer_column">
+            <h5 class="text-gray margin-bottom-24px">Thông tin về chúng tôi</h5>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Câu chuyện của chúng tôi</div>
+                    <div class="link-text bottom-text">Câu chuyện của chúng tôi</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-24px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Blog</div>
+                    <div class="link-text bottom-text">Blog</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Vận chuyển & Hoàn trả</div>
+                    <div class="link-text bottom-text">Vận chuyển & Hoàn trả</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Điều khoản & Điều kiện</div>
+                    <div class="link-text bottom-text">Điều khoản & Điều kiện</div>
+                </a>
+            </div>
+            <div class="footer_colum-wrap_links margin-bottom-10px">
+                <a href="#" class="links w-inline-block padding-top-2px">
+                    <div class="link-text top-text">Chính sách bảo mật</div>
+                    <div class="link-text bottom-text">Chính sách bảo mật</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Mutual_Design/script.js"></script>
+    <script src="Profile_script.js"></script>
+    <script>
+        // Đăng xuất
+        function logout() {
+            const confirmation = window.confirm("Bạn có chắc chắn muốn đăng xuất?");
+            if (confirmation) {
+                localStorage.removeItem("serverIP");
+                localStorage.removeItem("auth_token");
+                localStorage.removeItem("role");
+                localStorage.removeItem("user_id");
+                window.location.href = "../SignIn/login.html";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

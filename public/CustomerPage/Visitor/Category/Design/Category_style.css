@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+
+/* Default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    color: #121212;
+    font-size: 1.12vw;
+    font-weight: 400;
+    line-height: 130%;
+}
+  
+h1 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 4.65vw;
+    font-weight: 600;
+    line-height: 140%;
+}
+  
+h2 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 3.8vw;
+    font-weight: 600;
+    line-height: 120%;
+}
+  
+h3 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.7vw;
+    font-weight: 500;
+    line-height: 120%;
+  }
+  
+h4 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  
+h5 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.45vw;
+    font-weight: 500;
+    line-height: 120%;
+}
+  
+h6 {
+    color: #121212;
+    letter-spacing: .03vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.19vw;
+    font-weight: 500;
+    line-height: 120%;
+}
+  
+p {
+    letter-spacing: .03vw;
+    margin-bottom: 0;
+    font-size: 0.98vw;
+}
+  
+a {
+    color: #121212;
+    letter-spacing: .03vw;
+    font-size: 0.9vw;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: none;
+}
+
+hr {
+    height: 1px;
+    background-color: #D2D2D7;
+    border: none;
+}
+
+/* body và html */
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*----------------------------------------------Thiết kế main----------------------------------------------*/
+
+.category-main {
+    margin-top: 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh-6vw);
+}
+
+.category-title {
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    justify-content: center; 
+    box-sizing: border-box;
+    border-right: 1px solid #121212;
+    border-bottom: 1px solid #121212;
+    /* Đặt ảnh nền */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*Roll*/
+    height: 100vh;
+    position: sticky; 
+    top: 0; 
+    overflow: hidden; 
+}
+
+.category-title::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);  
+    z-index: 1; 
+}
+
+.category-title h1 {
+    color: #fff;
+    z-index: 2;
+}
+
+.category-product {
+    display: grid;
+    grid-template-rows: 310px; 
+    grid-template-rows: repeat(auto-fill, 310px); 
+    overflow-y: auto; 
+    scrollbar-width: none; 
+    box-sizing: border-box; 
+    border-bottom: 1px solid #121212;
+}
+
+.product-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    border-bottom: 1px solid #121212;
+    box-sizing: border-box; 
+    height: 310px;
+    width: 100%; 
+}
+
+/* Bỏ gạch chân cho product-wrapper cuối cùng */
+.remove-border-bottom {
+    border-bottom: none;
+}
+
+.product-left {
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    justify-content: center;
+    /*Ảnh*/
+    overflow: hidden; 
+    box-sizing: border-box;
+    position: relative; 
+    width: 100%;
+    height: 100%; 
+}
+
+.product-right {
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    justify-content: center;
+    /*Ảnh*/
+    overflow: hidden; 
+    border-left: 1px solid #121212;
+    box-sizing: border-box;
+    position: relative; 
+    width: 100%;
+    height: 100%; 
+}
+
+.product-image {
+    width: 100%; 
+    height: 110%; 
+    position: absolute;
+    z-index: 1;
+    padding: 40px;
+}
+
+.product-image img { 
+    transition: transform 0.3s ease; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.product-left:hover .product-image img,
+.product-right:hover .product-image img {
+    transform: scale(1.2);
+}
+
+.product-text {
+    width: 100%; 
+    height: 100%; 
+    color: #fff; 
+    z-index: 2; 
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    justify-content: flex-end;
+}
+
+.product-text {
+    gap: 2px; 
+    padding: 10px;
+}
+
+.text-name p {
+    font: 20px;
+    color: #121212;
+}
+
+.text-price p {
+    font: 14px;
+    color: #666666;
+}

@@ -1,0 +1,819 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+
+/* Default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    color: #121212;
+    font-size: 1.12vw;
+    font-weight: 400;
+    line-height: 130%;
+}
+  
+h1 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 4.65vw;
+    font-weight: 600;
+    line-height: 140%;
+}
+  
+h2 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 3.8vw;
+    font-weight: 600;
+    line-height: 120%;
+}
+  
+h3 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.7vw;
+    font-weight: 500;
+    line-height: 120%;
+  }
+  
+h4 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  
+h5 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.45vw;
+    font-weight: 500;
+    line-height: 120%;
+}
+  
+h6 {
+    color: #121212;
+    letter-spacing: .03vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.19vw;
+    font-weight: 500;
+    line-height: 120%;
+}
+  
+p {
+    letter-spacing: .03vw;
+    margin-bottom: 0;
+    font-size: 0.98vw;
+}
+  
+a {
+    color: #121212;
+    letter-spacing: .03vw;
+    font-size: 0.9vw;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: none;
+}
+
+hr {
+    height: 1px;
+    background-color: #D2D2D7;
+    border: none;
+}
+
+/* body và html */
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home-page-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*----------------------------------------------Thiết kế main-title----------------------------------------------*/
+
+.main-title {
+    display: grid; 
+    grid-template-rows: 1fr 1fr; 
+    border-right: 1px solid #121212;
+    height: 100vh; /* Chiều cao toàn màn hình */
+    position: sticky; /* Cố định khi scroll */
+    top: 0; /* Cố định từ đầu trang */
+    overflow: hidden; /* Ẩn nội dung vượt ra ngoài */
+    padding: 80px;
+    gap: 20px;
+    border-bottom: 1px solid #121212;
+}
+
+
+.title-head {
+    display: flex; /* Sử dụng layout dạng flexbox để sắp xếp các phần tử con */
+    flex-direction: column; /* Sắp xếp các phần tử con theo trục dọc (từ trên xuống dưới) */
+    text-align: left; /* Canh chữ trong nội dung văn bản về phía bên trái */
+    justify-content: flex-end; /* Đưa nội dung xuống phía dưới */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #121212;
+}
+
+.title-detail {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 0; /* Không có khoảng cách giữa các cột và hàng trong grid */
+    height: 213.5px;
+}
+
+.detail-image {
+    width: 100%; /* Đặt chiều rộng cố định cho container hình ảnh */
+    border-right: 1px solid #121212; /* Thêm đường viền bên phải màu đen dày 1px */
+    box-sizing: border-box; /* Tính cả padding và border vào kích thước tổng của phần tử */
+    display: flex; /* Sử dụng flexbox để sắp xếp nội dung bên trong */
+    justify-content: left; /* Canh giữa nội dung theo chiều ngang */
+    align-items: center; /* Canh giữa nội dung theo chiều dọc */
+    padding-right: 20px;
+}
+
+.detail-image img {
+    width: 100%; /* Hình ảnh không vượt quá chiều rộng của container */
+    height: 100%; /* Hình ảnh không vượt quá chiều cao của container */
+    object-fit: cover; /* Lấp đầy container và giữ nguyên tỷ lệ ảnh */
+    object-position: center; /* Căn giữa ảnh trong container */
+}
+
+.detail-text {
+    display: flex; /* Sử dụng layout dạng flexbox để sắp xếp các phần tử con */
+    flex-direction: column; /* Sắp xếp các phần tử con theo trục dọc (từ trên xuống dưới) */
+    width: 100%; /* Chiều rộng của phần tử chiếm toàn bộ container cha */
+    font-size: 15.0528px; /* Đặt kích thước chữ */
+    text-align: left; /* Căn giữa nội dung chính theo chiều ngang */
+    justify-content: flex-end; /* Đưa nội dung xuống phía dưới */
+    padding-left: 20px;
+}
+
+/*----------------------------------------------Thiết kế main-product----------------------------------------------*/
+.main-product {
+    display: grid;
+    grid-template-rows: 384px; 
+    grid-template-rows: repeat(auto-fill, 384px); 
+    overflow-y: auto; 
+    scrollbar-width: none; 
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+}
+
+.product-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+    height: 384px; /* Chiều cao cố định của mỗi ô */
+    width: 100%; /* Chiều rộng chiếm toàn bộ không gian */
+}
+
+.shop-section-left {
+    display: flex; /* Sử dụng Flexbox để sắp xếp nội dung bên trong */
+    flex-direction: column; /* Sắp xếp các phần tử con theo trục dọc */
+    justify-content: center; /* Canh giữa các phần tử theo chiều dọc */
+    align-items: center; /* Canh giữa các phần tử theo chiều ngang */
+    border-bottom: 1px solid black; /* Đường viền bên dưới tạo khung cho phần tử */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+}
+
+.shop-section-right {
+    display: flex; /* Sử dụng Flexbox để sắp xếp nội dung bên trong */
+    flex-direction: column; /* Sắp xếp các phần tử con theo trục dọc */
+    justify-content: center; /* Canh giữa các phần tử theo chiều dọc */
+    align-items: center; /* Canh giữa các phần tử theo chiều ngang */
+    border-left: 1px solid #121212; /* Đường viền bên phải phân cách sản phẩm */
+    border-bottom: 1px solid black; /* Đường viền bên dưới tạo khung cho phần tử */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+}
+
+.shop-section-right a {
+    display: inline-block; /* Giúp thẻ <a> có thể xử lý khoảng cách */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    font-size: 17.2032px; /* Kích thước chữ của thẻ <a> */
+    color: #121212; /* Màu chữ của liên kết */
+    margin-top: 10px; /* Tạo khoảng cách phía trên thẻ <a> */
+    padding: 10px 15px; /* Thêm đệm bên trong cho dễ nhìn */
+    text-align: center; /* Căn giữa nội dung nếu cần */
+}
+
+.shop-section-right a:hover {
+    text-decoration: underline; /* Thêm gạch chân cho liên kết khi hover */
+}
+
+.shop-section-left a {
+    display: inline-block; /* Giúp thẻ <a> có thể xử lý khoảng cách */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    font-size: 17.2032px; /* Kích thước chữ của thẻ <a> */
+    color: #121212; /* Màu chữ của liên kết */
+    margin-top: 10px; /* Tạo khoảng cách phía trên thẻ <a> */
+    padding: 10px 15px; /* Thêm đệm bên trong cho dễ nhìn */
+    text-align: center; /* Căn giữa nội dung nếu cần */
+}
+
+.shop-section-left a:hover {
+    text-decoration: underline; /* Thêm gạch chân cho liên kết khi hover */
+}
+
+.shop-link {
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của liên kết */
+    color: #121212; /* Đặt màu chữ của liên kết */
+}
+
+.shop-image-right {
+    width: 100%;
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+    overflow: hidden; /* Ẩn nội dung tràn ra khỏi khu vực hình ảnh */
+    border-left: 1px solid #121212; /* Đường viền bên phải phân cách sản phẩm */
+    border-bottom: 1px solid #121212; /* Đường viền bên dưới tạo khung */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+    position: relative; /* Tạo bối cảnh định vị cho các phần tử con */
+}
+
+.shop-image-left {
+    width: 100%;
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+    overflow: hidden; /* Ẩn nội dung tràn ra khỏi khu vực hình ảnh */
+    border-bottom: 1px solid #121212; /* Đường viền bên dưới tạo khung */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+    position: relative; /* Tạo bối cảnh định vị cho các phần tử con */
+}
+
+.shop-image-right a {
+    display: block; /* Liên kết được định dạng như một khối để bao trọn toàn bộ nội dung */
+    width: 100%; /* Chiều rộng chiếm toàn bộ container cha */
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+}
+
+.shop-image-right img {
+    width: 100%; /* Hình ảnh sẽ mở rộng để chiếm toàn bộ chiều rộng của container */
+    height: 100%; /* Hình ảnh sẽ mở rộng để chiếm toàn bộ chiều cao của container */
+    transition: transform 0.3s ease; /* Hiệu ứng mượt khi zoom */
+    object-fit: cover; /* Hình ảnh được cắt xén và phóng to để phù hợp với container, giữ nguyên tỷ lệ */
+    object-position: center; /* Căn hình ảnh vào giữa container */
+}
+
+.shop-image-right:hover img {
+    transform: scale(1.1); 
+}
+
+.shop-image-left a {
+    display: block; /* Liên kết được định dạng như một khối để bao trọn toàn bộ nội dung */
+    width: 100%; /* Chiều rộng chiếm toàn bộ container cha */
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+}
+
+.shop-image-left img {
+    width: 100%; /* Hình ảnh sẽ mở rộng để chiếm toàn bộ chiều rộng của container */
+    height: 100%; /* Hình ảnh sẽ mở rộng để chiếm toàn bộ chiều cao của container */
+    transition: transform 0.3s ease; /* Hiệu ứng mượt khi zoom */
+    object-fit: cover; /* Hình ảnh được cắt xén và phóng to để phù hợp với container, giữ nguyên tỷ lệ */
+    object-position: center; /* Căn hình ảnh vào giữa container */
+}
+
+.shop-image-left:hover img {
+    transform: scale(1.1); 
+}
+
+/*----------------------------------------------About us----------------------------------------------*/
+.about-us {
+    display: grid; /* Sử dụng layout dạng grid */
+    grid-template-rows: auto auto; /* Chia grid thành hai hàng, chiều cao tự động dựa vào nội dung */
+    width: 100%; /* Chiều rộng chiếm toàn bộ container cha */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+    height: 636.97;
+    margin-top: 3vw;
+}
+
+.about-us-title {
+    display: flex; /* Sử dụng flexbox để sắp xếp nội dung */
+    align-items:first baseline; /* Canh giữa nội dung theo chiều dọc */
+    justify-content: center; /* Canh giữa nội dung theo chiều ngang */
+    padding: 80px; /* Thêm khoảng cách bên trong 80px ở mọi phía */
+    border-bottom: 1px solid black; /* Đường viền dưới ngăn cách phần tiêu đề */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    position: sticky; /* Cố định khi scroll */
+    top: 0; /* Cố định từ đầu trang */
+    overflow: hidden; /* Ẩn nội dung vượt ra ngoài */
+}
+
+.about-us-story {
+    display: flex; /* Sử dụng flexbox để sắp xếp nội dung */
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+    gap: 2px; /* Khoảng cách giữa các phần tử bên trong là 5px */
+    border-bottom: 1px solid black; /* Đường viền dưới ngăn cách phần câu chuyện */
+    padding: 80px; /* Thêm khoảng cách bên trong 80px ở mọi phía */
+}
+
+.story-title {
+    font-size: 14px; /* Kích thước chữ nhỏ cho tiêu đề */
+    letter-spacing: 1px; /* Khoảng cách giữa các ký tự là 1px */
+    padding: 15px; /* Thêm khoảng cách bên trong 15px ở mọi phía */
+}
+
+.story-brand {
+    font-size: 38px; /* Kích thước chữ lớn cho tên thương hiệu */
+    font-weight: 500; /* Độ đậm chữ vừa phải */
+    padding: 15px; /* Thêm khoảng cách bên trong 15px ở mọi phía */
+}
+
+.story-text {
+    font-size: 16px; /* Kích thước chữ vừa phải */
+    line-height: 1.5; /* Khoảng cách giữa các dòng là 1.5 lần kích thước chữ */
+    padding: 15px; /* Thêm khoảng cách bên trong 15px ở mọi phía */
+}
+
+.learn-more-btn {
+    align-self: center; /* Căn giữa nút theo trục ngang trong flexbox */
+    padding: 10px 20px; /* Thêm khoảng cách 10px ở trên dưới, 20px ở hai bên */
+    font-size: 16px; /* Kích thước chữ cho nút */
+    border: 1px solid black; /* Đường viền màu đen dày 1px */
+    background-color: white; /* Màu nền trắng */
+    color: black; /* Màu chữ đen */
+    cursor: pointer; /* Hiển thị biểu tượng "tay" khi di chuột vào */
+    width: calc(100% - 40px); /* Chiều rộng là 100% trừ đi 40px */
+    text-align: center; /* Căn giữa nội dung trong nút */
+    margin: 20px auto; /* Thêm khoảng cách 20px ở trên và dưới, căn giữa nút */
+}
+
+.learn-more-btn:hover {
+    background-color: #121212; /* Thay đổi màu nền khi hover */
+    color: #fff; /* Thay đổi màu chữ khi hover */
+    border-color: #fff; /* Thay đổi màu đường viền khi hover */
+}
+
+@media (min-width: 1024px) {
+    .about-us {
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: none;
+    }
+
+    .about-us-title {
+        justify-content: flex-start;
+        font-size: 28px;
+        border-right: 1px solid black;
+    }
+}
+
+/*----------------------------------------------Why choose us----------------------------------------------*/
+.why-choose-us {
+    display: grid; /* Sử dụng Grid Layout để sắp xếp các phần tử */
+    grid-template-columns: 1fr 1fr; 
+    width: 100%; /* Chiều rộng chiếm toàn bộ container cha */
+    box-sizing: border-box; /* Bao gồm cả padding và border trong tổng kích thước phần tử */
+    align-items: start; 
+    margin-top: 6vw;
+}
+
+.title-section {
+    text-align: left; /* Canh lề trái cho nội dung tiêu đề */
+    padding: 80px; /* Thêm khoảng cách bên trong 80px ở mọi phía */
+    border-bottom: 1px solid black; /* Thêm đường viền dưới màu đen dày 1px */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    position: sticky; /* Cố định khi scroll */
+    top: 0; /* Cố định từ đầu trang */
+    overflow: hidden; /* Ẩn nội dung vượt ra ngoài */
+    border-right: 1px solid black;
+}
+
+.title-section-des {
+    padding-top: 20px;
+}
+
+.reason-section {
+    display: grid; /* Sử dụng Grid Layout để bố trí các lý do */
+    grid-template-rows: auto; /* Tạo các hàng với chiều cao tự động theo nội dung */
+    overflow-y: auto; 
+    scrollbar-width: none; 
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+}
+
+.reason {
+    padding: 80px; /* Thêm khoảng cách bên trong 80px ở mọi phía */
+    border-bottom: 1px solid black; /* Thêm đường viền dưới màu đen dày 1px */
+    display: flex; /* Sử dụng layout dạng Flexbox */
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    gap: 20px; /* Tạo khoảng cách 20px giữa các phần tử */
+    height: 100%; /* Đảm bảo container chiếm hết chiều cao */
+}
+
+.reason-detail {
+    font-size: 16px; /* Kích thước chữ cho nội dung chi tiết */
+    line-height: 1.6; /* Khoảng cách giữa các dòng là 1.6 lần kích thước chữ */
+}
+
+/*----------------------------------------------Contact----------------------------------------------*/
+.contact-us {
+    display: grid; /* Sử dụng Grid Layout */
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột với chiều rộng bằng nhau */
+}
+
+.contact-text {
+    display: grid; /* Sử dụng Grid Layout */
+    grid-template-rows: 1fr 1fr; /* Chia thành 2 hàng với chiều cao bằng nhau */
+}
+
+.contact-text-info {
+    display: grid; /* Sử dụng Grid Layout */
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột với chiều rộng bằng nhau */
+}
+
+.contact-text-info-child {
+    display: grid; /* Sử dụng Grid Layout */
+    grid-template-rows: 1fr 3fr; /* Hàng đầu tiên chiếm 1 phần, hàng thứ hai chiếm 3 phần */
+}
+
+.contact-image {
+    display: grid; /* Sử dụng Grid Layout */
+    grid-template-rows: 7fr 1fr; /* Hàng đầu tiên chiếm 7 phần, hàng thứ hai chiếm 1 phần */
+}
+
+.contact-image-follow {
+    display: grid; /* Sử dụng Grid Layout */
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột với chiều rộng bằng nhau */
+}
+
+.contact-text-talk {
+    text-align: left; /* Căn lề trái cho nội dung */
+    border-bottom: 1px solid black; /* Thêm đường viền dưới màu đen */
+    border-right: 1px solid black; /* Thêm đường viền phải màu đen */
+    padding: 80px; /* Thêm khoảng cách bên trong 80px ở mọi phía */
+}
+
+.contact-text-talk h2 {
+    font-size: 35px; /* Kích thước chữ lớn cho tiêu đề */
+    margin-bottom: 24px; /* Thêm khoảng cách phía dưới tiêu đề */
+    font-weight: 600; /* Độ đậm chữ vừa phải */
+}
+
+.contact-text-talk input {
+    padding: 10px; /* Thêm khoảng cách bên trong 10px */
+    font-size: 15px; /* Kích thước chữ 15px */
+    width: 220px; /* Chiều rộng cố định 220px */
+    height: 56px; /* Chiều cao cố định 56px */
+    border: 1px solid black; /* Đường viền màu đen dày 1px */
+}
+
+.contact-text-talk .cham-button {
+    margin-left: 10px; /* Khoảng cách bên trái 10px */
+    background-color: black; /* Màu nền đen */
+    color: white; /* Màu chữ trắng */
+    font-size: 15px; /* Kích thước chữ 15px */
+    padding: 10px; /* Thêm khoảng cách bên trong 10px */
+    height: 56px; /* Chiều cao cố định 56px */
+    width: 220px; /* Chiều rộng cố định 220px */
+    border: none; /* Không có đường viền */
+    cursor: pointer; /* Hiển thị biểu tượng con trỏ tay khi di chuột */
+    text-align: center; /* Căn giữa nội dung bên trong nút */
+}
+
+.contact-text-talk .cham-button:hover {
+    background-color: #fff; /* Thay đổi màu nền thành trắng khi hover */
+    color: #121212; /* Thay đổi màu chữ thành đen khi hover */
+    border: 1px solid #121212; /* Thêm đường viền đen khi hover */
+    transform: scale(1.05); /* Phóng to nút nhẹ khi hover */
+}
+
+.contact-text-talk p {
+    margin-bottom: 30px; /* Khoảng cách bên dưới 30px */
+    font-size: 18px; /* Kích thước chữ 18px */
+    line-height: 1.5; /* Khoảng cách dòng là 1.5 lần kích thước chữ */
+    font-style: italic; /* Chữ in nghiêng */
+}
+
+.contact-image-image {
+    overflow: hidden; /* Ẩn nội dung tràn ra ngoài */
+    width: auto; /* Chiều rộng tự động */
+    height: auto; /* Chiều cao tự động */
+    position: relative;
+}
+
+.contact-image-image img {
+    width: 100%; /* Chiều rộng tối đa bằng container cha */
+    height: 100%; /* Chiều cao bằng container cha */
+    object-fit: cover; /* Hình ảnh vừa khít container, giữ nguyên tỷ lệ */
+    object-position: center; /* Căn giữa hình ảnh trong container */
+}
+
+.contact-text-info-child-title,
+.contact-text-info-child-info {
+    border-bottom: 1px solid black; /* Đường viền dưới màu đen */
+    border-right: 1px solid black; /* Đường viền phải màu đen */
+}
+
+.contact-image-follow-title {
+    border-top: 1px solid black; /* Đường viền trên màu đen */
+    border-bottom: 1px solid black; /* Đường viền dưới màu đen */
+    border-right: 1px solid black; /* Đường viền phải màu đen */
+}
+
+.contact-image-follow-info {
+    border-top: 1px solid black; /* Đường viền trên màu đen */
+    border-bottom: 1px solid black; /* Đường viền dưới màu đen */
+    gap: 30px; /* Khoảng cách giữa các phần tử bên trong là 30px */
+    justify-content: center; /* Canh giữa các phần tử theo chiều ngang */
+    display: flex; /* Sử dụng Flexbox để sắp xếp nội dung */
+    align-items: center; /* Canh giữa các phần tử theo chiều dọc */
+}
+
+/*----------------------------------------------Our Service----------------------------------------------*/
+.our-service-title {
+    border-bottom: 1px solid black; /* Thêm đường viền dưới màu đen */
+}
+
+.our-service {
+    display: grid; /* Sử dụng Grid Layout */
+    grid-template-columns: 1fr 1fr; /* Chia thành 2 cột với chiều rộng bằng nhau */
+}
+
+.our-service-image {
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    align-items: center; /* Căn giữa nội dung theo chiều ngang */
+    overflow: hidden; /* Ẩn nội dung tràn ra ngoài container */
+    width: 100%; /* Chiều rộng chiếm toàn bộ container */
+    height: 100%; /* Chiều cao tự động theo nội dung */
+    max-height: 100%; /* Chiều cao tối đa là 100% */
+    border-right: 1px solid black; /* Thêm đường viền phải màu đen */
+    border-bottom: 1px solid #fff; /* Thêm đường viền dưới màu đen */
+}
+
+.our-service-image img {
+    width: 100%; /* Chiều rộng tối đa bằng container cha */
+    height: 100%; /* Chiều cao tự động theo tỷ lệ hình ảnh */
+    object-fit: cover; /* Lấp đầy container và giữ nguyên tỷ lệ */
+    object-position: center; /* Căn giữa hình ảnh trong container */
+}
+
+.our-service-info {
+    display: flex; /* Sử dụng Flexbox */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    height: 100%; /* Chiều cao chiếm toàn bộ container */
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+    padding: 80px; /* Thêm khoảng cách bên trong 80px ở mọi phía */
+    gap: 20px; /* Thêm khoảng cách 20px giữa các phần tử con */
+}
+
+.our-service-info p {
+    font-size: 15px; /* Kích thước chữ vừa phải */
+    line-height: 30px; /* Khoảng cách dòng là 40px */
+    text-align: center; /* Căn giữa nội dung đoạn văn bản */
+}
+
+.our-service-info h3 {
+    font-size: 14px; /* Kích thước chữ nhỏ */
+    margin-bottom: 30px; /* Thêm khoảng cách bên dưới 30px */
+}
+
+.sub-button {
+    width: 180px; /* Chiều rộng cố định 180px */
+    height: 56px; /* Chiều cao cố định 56px */
+    padding: 16px 24px 14px 24px; /* Khoảng cách bên trong: trên 16px, dưới 14px, hai bên 24px */
+    gap: 8px; /* Khoảng cách giữa các phần tử bên trong */
+    border: 1px solid #121212; /* Đường viền màu đen */
+    background-color: transparent; /* Nền trong suốt */
+    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi mượt trong 0.3 giây */
+}
+
+.sub-button:hover {
+    background-color: #121212; /* Thay đổi màu nền khi hover */
+    color: #fff; /* Thay đổi màu chữ khi hover */
+    border-color: #fff; /* Thay đổi màu đường viền khi hover */
+}
+
+/*----------------------------------------------Wedding----------------------------------------------*/
+
+.wedding-service {
+    position: relative; /* Đặt vị trí tương đối để chứa lớp phủ và nội dung */
+    background-image: url('https://www.theweddingblissthailand.com/wp-content/uploads/2018/12/Nadear_AndrescGreg_Finck-761.jpg'); /* Hình nền khu vực */
+    background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ khu vực */
+    background-position: center; /* Căn giữa hình nền */
+    height: 100vh; /* Chiều cao chiếm toàn bộ màn hình */
+    display: flex; /* Sử dụng Flexbox để sắp xếp nội dung */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    color: white; /* Màu chữ trắng */
+    text-align: center; /* Canh giữa nội dung văn bản theo chiều ngang */
+    background-attachment: fixed;
+}
+
+.wedding-service .overlay {
+    position: absolute; /* Đặt vị trí tuyệt đối bên trong Wedding Service */
+    top: 0; /* Căn từ trên cùng */
+    left: 0; /* Căn từ bên trái */
+    width: 100%; /* Chiều rộng chiếm toàn bộ container cha */
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền đen với độ trong suốt 50% */
+    z-index: 1; /* Đặt lớp phủ nằm phía sau nội dung nhưng trên hình nền */
+}
+
+.wedding-service .content {
+    position: relative; /* Vị trí tương đối để nằm trên lớp phủ */
+    z-index: 2; /* Đảm bảo nội dung nằm trên lớp phủ */
+    max-width: 800px; /* Giới hạn chiều rộng nội dung để không tràn */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    padding: 20px; /* Thêm khoảng cách bên trong nội dung */
+    display: flex; /* Sử dụng Flexbox để sắp xếp nội dung */
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wedding-service .content p {
+    font-size: 1rem; /* Kích thước chữ vừa phải */
+    margin-bottom: 30px; /* Khoảng cách dưới 30px */
+    line-height: 1.6; /* Khoảng cách dòng là 1.6 lần kích thước chữ */
+}
+
+.wedding-service .content button {
+    width: 180px; /* Chiều rộng cố định 180px */
+    height: 56px; /* Chiều cao cố định 56px */
+    background-color: transparent; /* Nền trong suốt */
+    border: 1px solid white; /* Đường viền màu trắng dày 2px */
+    color: white; /* Màu chữ trắng */
+    padding: 10px 20px; /* Khoảng cách bên trong: trên dưới 10px, hai bên 20px */
+    font-size: 1rem; /* Kích thước chữ của nút */
+    cursor: pointer; /* Hiển thị biểu tượng con trỏ tay khi di chuột */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng mượt khi chuyển đổi màu */
+}
+
+.wedding-service .content button:hover {
+    background-color: white; /* Thay đổi nền thành trắng khi hover */
+    color: black; /* Thay đổi màu chữ thành đen khi hover */
+}
+
+/*----------------------------------------------Our Client----------------------------------------------*/
+
+.client-said {
+    position: relative; /* Để chứa các phần tử con */
+    display: grid; /* Sử dụng Grid Layout */
+    place-items: center; /* Căn giữa nội dung theo cả chiều ngang và dọc */
+    text-align: center; /* Căn giữa văn bản */
+    padding: 40px; /* Thêm khoảng cách bên trong */
+    gap: 16px; /* Khoảng cách giữa các phần tử */
+    height: 580px; /* Chiều cao cố định */
+    border-bottom: 1px solid #000; /* Đường viền dưới */
+    overflow: hidden; /* Ẩn nội dung tràn ra ngoài */
+    background-color: #fff; /* Nền trắng */
+}
+
+.reviews-slider {
+    display: flex; /* Sử dụng flexbox để các phần tử con nằm ngang */
+    width: 100%; /* Chiều rộng của slider */
+    transition: transform 0.5s ease-in-out; /* Hiệu ứng chuyển đổi mượt */
+    transform: translateX(0); /* Vị trí ban đầu của slider */
+}
+
+.review {
+    min-width: 100%; /* Mỗi review chiếm toàn bộ vùng hiển thị */
+    opacity: 0; /* Ẩn phần tử khi không active */
+    transition: opacity 0.5s ease-in-out; /* Hiệu ứng mờ dần */
+    position: absolute; /* Chồng lớp phần tử */
+    top: 0;
+    left: 0;
+}
+
+.review.active {
+    opacity: 1; /* Hiển thị phần tử active */
+    position: relative; /* Giữ nguyên trong luồng tài liệu */
+}
+
+.review h3 {
+    font-size: 18px; /* Kích thước chữ vừa phải */
+    margin-bottom: 10px; /* Khoảng cách dưới */
+    font-weight: bold; /* Chữ đậm */
+    text-transform: uppercase; /* Chữ in hoa */
+    color: #333; /* Màu chữ */
+}
+
+.review h2 {
+    font-size: 28px; /* Kích thước chữ lớn */
+    font-weight: 600; /* Độ đậm chữ */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+}
+
+.review p {
+    font-size: 18px; /* Kích thước chữ vừa phải */
+    font-style: italic; /* Chữ in nghiêng */
+    margin-bottom: 15px; /* Khoảng cách dưới */
+    line-height: 1.5; /* Khoảng cách dòng */
+}
+
+.review span {
+    font-size: 16px; /* Kích thước chữ nhỏ hơn */
+    font-weight: 500; /* Độ đậm trung bình */
+    color: #555; /* Màu chữ xám */
+}
+
+.arrows {
+    position: absolute; /* Vị trí tuyệt đối trong container */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    width: 100%; /* Chiều rộng 100% */
+    display: flex; /* Hiển thị mũi tên theo flexbox */
+    justify-content: space-between; /* Mũi tên ở hai đầu container */
+    transform: translateY(-50%); /* Đưa mũi tên về giữa container */
+    pointer-events: none; /* Ẩn các phần tử khỏi chuột */
+}
+
+.arrows span {
+    cursor: pointer; /* Con trỏ tay khi di chuột */
+    font-size: 2rem; /* Kích thước chữ lớn */
+    color: #000; /* Màu đen */
+    background: none; /* Không có nền */
+    padding: 10px; /* Khoảng cách bên trong */
+    user-select: none; /* Ngăn chọn văn bản */
+    pointer-events: auto; /* Kích hoạt sự kiện chuột */
+}
+
+.arrows span:hover {
+    color: #555; /* Đổi màu khi hover */
+}
+
+/*----------------------------------------------Của Hồng Phúc----------------------------------------------*/
+.example {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr 1fr; 
+    border: 1px solid black;
+}
+
+.our-service-title {
+    height:220px;
+    padding:80 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-text-info-child-title ,
+.contact-image-follow-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-text-info-child-title h2,
+.contact-image-follow-title h2{
+    text-align: center;
+    font-size:38px;
+}
+
+.contact-text-info-child-info {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 24px;
+}
+
+.contact-text-info-child-info p {
+    font-style:bold;
+}
+
+/*----------------------------------------------FAQ----------------------------------------------*/
+
+.video-container-part {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #121212;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;  /* Giới hạn chiều rộng tối đa */
+    aspect-ratio: 16 / 9; /* Tỉ lệ chuẩn 16:9 cho video */
+    border-radius: 20px; /* Bo góc container */
+    overflow: hidden; /* Ngăn nội dung tràn ra ngoài */
+    background-color: #fff; /* Màu nền đen */
+    margin: 0 auto; /* Căn giữa container */
+}
+
+/* Video iframe bên trong container */
+.video-container iframe {
+    width: 100%;  /* Video full chiều rộng container */
+    height: 100%; /* Video full chiều cao container */
+    border: none;  /* Loại bỏ viền mặc định */
+    border-radius: 20px; /* Bo góc cho video */
+}

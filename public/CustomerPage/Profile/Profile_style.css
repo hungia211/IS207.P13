@@ -1,0 +1,668 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    color: #121212;
+    font-size: 1.12vw;
+    font-weight: 400;
+    line-height: 130%;
+}
+  
+h1 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 4.65vw;
+    font-weight: 600;
+    line-height: 140%;
+}
+  
+h2 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 3.8vw;
+    font-weight: 600;
+    line-height: 120%;
+}
+  
+h3 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.7vw;
+    font-weight: 500;
+    line-height: 120%;
+  }
+  
+h4 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  
+h5 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.45vw;
+    font-weight: 500;
+    line-height: 120%;
+}
+  
+h6 {
+    color: #121212;
+    letter-spacing: .03vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.19vw;
+    font-weight: 500;
+    line-height: 120%;
+}
+  
+p {
+    letter-spacing: .03vw;
+    margin-bottom: 0;
+    font-size: 0.98vw;
+}
+  
+a {
+    color: #121212;
+    letter-spacing: .03vw;
+    font-size: 0.9vw;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: none;
+}
+
+hr {
+    height: 1px;
+    background-color: #D2D2D7;
+    border: none;
+}
+
+/* các class dùng chung */
+.border-bottom { border-bottom: 1px solid #000;}
+.border-r { border-right: 1px solid #000; }
+.border-l { border-left: 1px solid #000; }
+
+.padding-top-2px{ padding-top: 0.18vw;}
+.padding-top-10px{ padding-top: 0.9vw;}
+.padding-left-10px{ padding-left: 0.9vw;}
+
+.margin-bottom-24px { margin-bottom: 24px;}
+.margin-top-10px{ margin-top: 10px;}
+.margin-botton-16 { margin-bottom: 16px;}
+.margin-top-16px{ margin-top: 16px;}
+.margin-bottom-10px { margin-bottom: 10px;}
+
+.text-gray { color: #808080;}
+.black-line { background-color: #000;}
+
+/*----------------------------------------------Thông tin tài khoản----------------------------------------------*/
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 6vw;
+    height: calc(100vh - 6vw);
+    border-bottom: 1px solid #121212;
+}
+
+.profile-part {
+    width: 100%;
+    padding: 40px;
+    border-right: 1px solid #121212;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.title-wrap {
+    height: 8%;
+    font-weight: 600;
+    border-bottom: 1px solid #121212;
+    margin-bottom: 20px;
+}
+
+.profile-image-part {
+    height: 30%;
+    display: flex; /* Sử dụng flexbox */
+    justify-content: center; /* Căn giữa ảnh theo chiều ngang */
+    align-items: center; /* Căn giữa ảnh theo chiều dọc */
+    position: relative;
+}
+
+.profile-image {
+    width: 150px; /* Đặt chiều rộng cho container */
+    height: 150px; /* Đặt chiều cao cho container */
+    border-radius: 50%; /* Tạo hình tròn cho container */
+    border: 1px solid #121212;
+    display: flex; /* Sử dụng flexbox */
+    justify-content: center; /* Căn giữa ảnh theo chiều ngang */
+    align-items: center; /* Căn giữa ảnh theo chiều dọc */
+    overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài container */
+    z-index: 0;
+}
+
+.profile-image img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+
+.edit-image-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Đổi màu nền khi hover */
+}
+
+.profile-info {
+    padding-top: 30px;
+    height: 54%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-info p {
+    font-size: 20px; /* Điều chỉnh kích thước chữ */
+    color: #121212; 
+    margin-bottom: 0; /* Loại bỏ margin mặc định */
+}
+
+.profile-info .label-wrap {
+    font-weight: 600; /* In đậm */
+    width: 150px; /* Chiều rộng cố định */
+    display: inline-block; /* Đảm bảo giữ kích thước */
+    text-align: left; /* Căn phải */
+    margin-right: 10px; /* Thêm khoảng cách giữa label và value */
+}
+
+.profile-info span {
+    font-weight: 400; /* Mặc định font thường cho value */
+}
+
+
+.profile-button {
+    height: 8%;
+    display: flex; /* Sử dụng flexbox */
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-wrap {
+    align-self: center; /* Căn giữa nút theo trục ngang trong flexbox */
+    padding: 10px 20px; /* Thêm khoảng cách 10px ở trên dưới, 20px ở hai bên */
+    font-size: 16px; /* Kích thước chữ cho nút */
+    border: 1px solid black; /* Đường viền màu đen dày 1px */
+    background-color: white; /* Màu nền trắng */
+    color: black; /* Màu chữ đen */
+    cursor: pointer; /* Hiển thị biểu tượng "tay" khi di chuột vào */
+    width: calc(100% - 40px); /* Chiều rộng là 100% trừ đi 40px */
+    text-align: center; /* Căn giữa nội dung trong nút */
+    margin: 20px auto; /* Thêm khoảng cách 20px ở trên và dưới, căn giữa nút */
+}
+
+.btn-wrap:hover {
+    background-color: #121212; /* Thay đổi màu nền khi hover */
+    color: #fff; /* Thay đổi màu chữ khi hover */
+    border-color: #fff; /* Thay đổi màu đường viền khi hover */
+}
+
+/*----------------------------------------------Lịch sử đơn hàng----------------------------------------------*/
+
+.order-history-part {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Phần lịch sử đơn hàng */
+
+.order-history-detail {
+    max-height: 470px; /* Chiều cao của phần lịch sử chi tiết */
+    overflow-y: auto; /* Thêm khả năng cuộn dọc nếu bảng quá dài */
+}
+
+table {
+    width: 100%; /* Chiều rộng của bảng */
+    border-collapse: collapse; /* Xóa khoảng cách giữa các ô trong bảng */
+    background-color: white; /* Màu nền của bảng */
+}
+
+th, td {
+    padding: 15px; /* Khoảng cách giữa nội dung và viền của các ô */
+    text-align: left; /* Căn trái nội dung trong ô */
+    font-size: 1vw; /* Kích thước chữ trong bảng */
+    color: #121212; /* Màu chữ của bảng */
+}
+
+th {
+    background-color: #f0f0f0; /* Màu nền cho các tiêu đề của bảng */
+    font-weight: 600; /* Độ đậm của chữ tiêu đề */
+    position: sticky; /* Giữ tiêu đề ở đầu khi cuộn */
+    top: 0; /* Ghim tiêu đề lên trên */
+    z-index: 1; /* Đảm bảo tiêu đề luôn ở trên các nội dung bảng */
+}
+
+td {
+    background-color: #fafafa; /* Màu nền nhẹ cho các ô dữ liệu */
+}
+
+tr:nth-child(even) td {
+    background-color: #fafafa; /* Màu nền cho các hàng chẵn trong bảng */
+}
+
+a {
+    color: #4285F4 !important; /* Màu liên kết */
+    text-decoration: none; /* Loại bỏ gạch chân ban đầu */
+    font-weight: 500; /* Đặt độ đậm của chữ liên kết */
+}
+
+a:hover {
+    text-decoration: underline; /* Hiển thị gạch dưới khi hover lên liên kết */
+}
+
+/* Đảm bảo các đường viền của bảng trông đẹp mắt */
+th, td {
+    border-bottom: 1px solid #f0f0f0; /* Đặt đường viền dưới cho các ô trong bảng */
+}
+
+tr:last-child td {
+    border-bottom: none; /* Loại bỏ đường viền dưới của hàng cuối cùng trong bảng */
+}
+
+
+/*----------------------------------------------chi tiết đơn hàng----------------------------------------------*/
+.detail-button, .cancel-button {
+    padding: 10px 20px; /* Kích thước của nút */
+    font-size: 1em; /* Kích thước chữ trong nút */
+    border: 1px solid #000; /* Loại bỏ đường viền của nút */
+    cursor: pointer; /* Con trỏ chuột chuyển thành hình tay khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền khi hover */
+}
+
+.detail-button:hover, .cancel-button:hover {
+    background-color: #121212; /* Thay đổi màu nền khi hover */
+    color: #fff; /* Thay đổi màu chữ khi hover */
+}
+
+/*----------------------------------------------Chi tiết đơn hàng----------------------------------------------*/
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    max-height: 80%;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.close-popup-button {
+    padding: 10px 20px; /* Kích thước của nút */
+    font-size: 1em; /* Kích thước chữ trong nút */
+    border: 1px solid #000; /* Loại bỏ đường viền của nút */
+    cursor: pointer; /* Con trỏ chuột chuyển thành hình tay khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền khi hover */
+}
+
+.close-popup-button:hover {
+    background-color: #121212; /* Thay đổi màu nền khi hover */
+    color: #fff; /* Thay đổi màu chữ khi hover */
+}
+
+/* Hiển thị mỗi sản phẩm trên một dòng */
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eaeaea; /* Đường phân cách giữa các sản phẩm */
+    padding-bottom: 10px;
+}
+
+.order-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px; /* Khoảng cách giữa hình ảnh và thông tin */
+    border-radius: 8px; /* Bo góc hình ảnh */
+}
+
+.order-item p {
+    margin: 0 10px;
+    width: 200px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/*----------------------------------------------Chỉnh sửa tài khoản----------------------------------------------*/
+
+/* Modal chỉnh sửa tài khoản */
+#edit-account {
+    display: none; /* Ẩn modal khi chưa được kích hoạt */
+    position: fixed; /* Cố định modal tại vị trí chính xác trên màn hình */
+    top: 0; /* Căn chỉnh modal bắt đầu từ phía trên cùng */
+    left: 0; /* Căn chỉnh modal bắt đầu từ phía trái */
+    width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+    height: 100%; /* Chiếm toàn bộ chiều cao màn hình */
+    background-color: rgba(0, 0, 0, 0.5); /* Tạo hiệu ứng mờ cho nền phía sau modal */
+    z-index: 1000; /* Đảm bảo modal hiển thị trên các thành phần khác */
+    display: flex; /* Sử dụng Flexbox để căn giữa nội dung */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Nội dung của Modal */
+.edit-account-content {
+    background-color: #fff; /* Nền trắng cho modal */
+    padding: 20px; /* Khoảng cách bên trong modal */
+    border-radius: 8px; /* Bo tròn các góc */
+    width: 400px; /* Chiều rộng mặc định của modal */
+    max-width: 100%; /* Đảm bảo modal không vượt quá chiều rộng màn hình */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ để modal nổi bật hơn */
+}
+
+/* Tiêu đề của Modal */
+.edit-account-content h4 {
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    font-size: 1.2em; /* Kích thước chữ của tiêu đề */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Các nhãn (label) trong form */
+#edit-account-form label {
+    display: block; /* Hiển thị mỗi nhãn trên một dòng */
+    margin-bottom: 8px; /* Khoảng cách giữa nhãn và ô nhập liệu */
+    font-weight: 550; /* In đậm nhãn để dễ nhìn */
+}
+
+/* Các ô nhập liệu (input) trong form */
+#edit-account-form input, select {
+    width: 100%; /* Chiếm toàn bộ chiều ngang của form */
+    padding: 10px; /* Khoảng cách bên trong ô nhập liệu */
+    margin-bottom: 15px; /* Khoảng cách dưới mỗi ô nhập liệu */
+    border: 1px solid #ccc; /* Đường viền màu xám nhạt */
+    border-radius: 4px; /* Bo tròn các góc của ô nhập liệu */
+    font-size: 1em; /* Kích thước chữ trong ô nhập liệu */
+}
+
+/* Khu vực chứa các nút trong modal */
+.edit-account-buttons {
+    display: flex; /* Sử dụng Flexbox để sắp xếp nút */
+    justify-content: space-between; /* Giãn cách đều các nút */
+}
+
+/* Các nút trong modal */
+.edit-account-buttons button {
+    padding: 10px 20px; /* Kích thước của nút */
+    font-size: 1em; /* Kích thước chữ trong nút */
+    border: none; /* Loại bỏ đường viền của nút */
+    border-radius: 4px; /* Bo tròn các góc của nút */
+    cursor: pointer; /* Con trỏ chuột chuyển thành hình tay khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền khi hover */
+}
+
+/* Nút xác nhận (nút đầu tiên) */
+.edit-account-buttons button[type="button"]:first-child {
+    font-size: 16px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.edit-account-buttons button[type="button"]:first-child:hover {
+    background-color: #121212; /* Thay đổi màu nền khi hover */
+    color: #fff; /* Thay đổi màu chữ khi hover */
+    border-color: #fff; /* Thay đổi màu đường viền khi hover */
+}
+
+/* Nút hủy (nút cuối cùng) */
+.edit-account-buttons button[type="button"]:last-child {
+    background-color: #D2D2D7; /* Màu đỏ cho nút hủy */
+    color: white; /* Chữ màu trắng */
+}
+
+/* Hiệu ứng hover cho các nút */
+.edit-account-buttons button:hover {
+    opacity: 0.8; /* Giảm độ sáng của nút khi hover */
+}
+
+/*----------------------------------------------Đổi mật khẩu----------------------------------------------*/
+
+/* Định dạng chung cho modal */
+#change-password {
+    display: none; /* Ẩn modal khi không hiển thị */
+    position: fixed; /* Modal sẽ luôn hiển thị tại vị trí cố định trên màn hình */
+    top: 0; /* Căn chỉnh modal bắt đầu từ trên cùng */
+    left: 0; /* Căn chỉnh modal bắt đầu từ bên trái */
+    width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+    height: 100%; /* Chiếm toàn bộ chiều cao màn hình */
+    background-color: rgba(0, 0, 0, 0.5); /* Tạo hiệu ứng mờ cho nền phía sau modal */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    z-index: 1000; /* Đảm bảo modal hiển thị trên tất cả các thành phần khác */
+}
+
+/* Nội dung chính của modal */
+.change-password-content {
+    background-color: #fff; /* Nền trắng cho modal */
+    padding: 20px; /* Khoảng cách bên trong modal */
+    border-radius: 8px; /* Bo tròn các góc modal */
+    width: 400px; /* Đặt chiều rộng cố định cho modal */
+}
+
+/* Tiêu đề của modal */
+.change-password-content h4 {
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    font-size: 1.2em; /* Kích thước chữ của tiêu đề */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Nhãn (label) cho các trường nhập liệu */
+.change-password-content label {
+    display: block; /* Hiển thị mỗi nhãn trên một dòng */
+    margin-bottom: 8px; /* Khoảng cách giữa nhãn và ô nhập liệu */
+    font-weight: 550; /* In đậm nhãn để dễ nhìn */
+}
+
+/* Các ô nhập liệu (input) */
+.change-password-content input {
+    width: 100%; /* Chiếm toàn bộ chiều ngang của form */
+    padding: 10px; /* Khoảng cách bên trong ô nhập liệu */
+    margin-bottom: 15px; /* Khoảng cách dưới mỗi ô nhập liệu */
+    border: 1px solid #ccc; /* Đường viền màu xám nhạt */
+    border-radius: 4px; /* Bo tròn các góc của ô nhập liệu */
+    font-size: 1em; /* Kích thước chữ trong ô nhập liệu */
+}
+
+/* Khu vực chứa các nút */
+.change-password-buttons {
+    display: flex; /* Sử dụng Flexbox để sắp xếp nút */
+    justify-content: space-between; /* Giãn cách đều các nút */
+}
+
+/* Định dạng chung cho các nút */
+.change-password-buttons button {
+    padding: 10px 20px; /* Kích thước của nút */
+    font-size: 1em; /* Kích thước chữ trong nút */
+    border: none; /* Loại bỏ đường viền của nút */
+    border-radius: 4px; /* Bo tròn các góc của nút */
+    cursor: pointer; /* Con trỏ chuột chuyển thành hình tay khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền khi hover */
+}
+
+/* Nút xác nhận (nút đầu tiên) */
+.change-password-buttons button[type="button"]:first-child {
+    font-size: 16px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.change-password-buttons button[type="button"]:first-child:hover {
+    background-color: #121212; /* Thay đổi màu nền khi hover */
+    color: #fff; /* Thay đổi màu chữ khi hover */
+    border-color: #fff; /* Thay đổi màu đường viền khi hover */
+}
+
+/* Nút hủy (nút cuối cùng) */
+.change-password-buttons button[type="button"]:last-child {
+    background-color: #D2D2D7; /* Màu đỏ cho nút hủy */
+    color: white; /* Chữ màu trắng */
+}
+
+/* Hiệu ứng hover cho nút */
+.change-password-buttons button[type="button"]:hover {
+    opacity: 0.8; /* Giảm độ sáng của nút khi hover */
+}
+
+/* Thông báo lỗi */
+#error-message {
+    color: red; /* Màu đỏ cho thông báo lỗi */
+    font-size: 12px; /* Kích thước chữ nhỏ cho thông báo lỗi */
+    display: none; /* Ẩn thông báo lỗi mặc định */
+}
+
+/*----------------------------------------------Chi tiết đơn hàng----------------------------------------------*/
+
+/* Modal tổng thể */
+.order-details-modal {
+    display: none; /* Ẩn modal khi không sử dụng */
+    position: fixed; /* Đặt modal ở vị trí cố định */
+    top: 0; /* Vị trí từ trên cùng */
+    left: 0; /* Vị trí từ bên trái */
+    width: 100%; /* Chiều rộng 100% */
+    height: 100%; /* Chiều cao 100% */
+    background-color: rgba(0, 0, 0, 0.5); /* Hiệu ứng nền mờ */
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center; /* Canh giữa theo chiều dọc */
+    z-index: 1000; /* Đảm bảo modal ở trên cùng */
+}
+
+/* Nội dung modal */
+.order-details-content {
+    background-color: #fff; /* Nền trắng */
+    width: 60%; /* Chiều rộng modal */
+    max-width: 600px; /* Giới hạn chiều rộng tối đa */
+    max-height: 70%; /* Giới hạn chiều cao tối đa */
+    overflow-y: overlay; /* Cuộn nếu nội dung quá dài */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+    position: relative; /* Đặt vị trí tương đối để điều chỉnh header */
+}
+
+/* Header của modal */
+.order-header-wrapper {
+    position: sticky; /* Sticky header */
+    top: 0; /* Cố định ở đầu modal */
+    background-color: #fff; /* Nền header trùng với nội dung */
+    z-index: 1001; /* Đảm bảo header luôn trên cùng */
+}
+
+.order-header {
+    display: flex; /* Sử dụng flexbox */
+    justify-content: space-between; /* Canh lề trái phải */
+    align-items: center; /* Căn giữa các mục theo chiều dọc */
+    padding: 15px 20px; /* Padding trong header */
+    border-bottom: 1px solid #ccc; /* Đường kẻ dưới */
+}
+
+/* Tiêu đề mã đơn hàng (bên trái) */
+.order-header h4 {
+    font-size: 16px; /* Cỡ chữ tiêu đề */
+    margin: 0; /* Xoá khoảng cách bên ngoài */
+    font-weight: 550; /* In đậm nhãn để dễ nhìn */
+}
+
+/* Nút đóng (bên phải) */
+.close-button {
+    font-size: 17px; /* Cỡ chữ của nút đóng */
+    background: none; /* Không có nền */
+    border: none; /* Không có viền */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua */
+    color: #121212; /* Màu sắc của nút */
+    transition: color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+}
+
+.close-button:hover {
+    color: #d2d2d7; /* Màu khi hover */
+}
+
+/* Nội dung chính với padding */
+.order-details-wrapper {
+    padding: 20px 15px; /* Padding cho phần nội dung chính */
+}
+
+/* Thông tin đơn hàng */
+.order-info {
+    display: flex; /* Sử dụng flexbox */
+    justify-content: space-between; /* Canh lề trái phải */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+}
+
+.left-info {
+    text-align: left; /* Canh trái */
+}
+
+.right-info {
+    text-align: right; /* Canh phải */
+}
+
+/* Các sản phẩm trong đơn hàng */
+.order-items .item {
+    display: flex; /* Sử dụng flexbox */
+    justify-content: space-between; /* Canh lề trái phải */
+    padding: 10px 0; /* Padding dọc */
+    border-bottom: 1px solid #ccc; /* Đường kẻ dưới */
+    font-size: 14px; /* Cỡ chữ của sản phẩm */
+}
+
+/* Tuỳ chỉnh thanh cuộn */
+.order-details-content::-webkit-scrollbar {
+    width: 8px; /* Độ rộng thanh cuộn */
+}
+
+.order-details-content::-webkit-scrollbar-thumb {
+    background-color: #d0d0d0; /* Màu thanh kéo */
+    border-radius: 10px; /* Bo tròn thanh kéo */
+}
+
+.order-details-content::-webkit-scrollbar-thumb:hover {
+    background-color: #d2d2d7; /* Màu khi hover */
+}
+
+.order-details-content::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Màu track */
+    border-radius: 10px; /* Bo tròn track */
+}
+
+
+

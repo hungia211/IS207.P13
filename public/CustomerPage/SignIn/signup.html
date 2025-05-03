@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUP</title>
+    <link rel="stylesheet" href="sign_in_sign_up.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="outer-container">
+        <div class="inner-container">
+            <div class="content-box">
+                <header class="header">
+                    <h1>ĐĂNG KÝ</h1>
+                </header>
+                
+                <main class="main-content">
+                    <!-- <p>Sử dụng số điện thoại của bạn để đăng ký hoặc đăng nhập</p> -->
+                    <form class="form-info">
+
+                        <input type="text" id="name" placeholder="Tên của bạn *" required>
+
+                        <input type="email" id="email" placeholder="Email của của bạn *" required>
+
+                        <input type="password" id="password" placeholder="Mật khẩu *" required>
+
+                        <input type="password" id="password_confirmation" placeholder="Xác nhận mật khẩu *" required>
+
+
+
+                        <div class="delivery-group">
+                            <select id="gender" name="gender">
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                            </select>
+
+                            <input type="date" id="birthday" placeholder="Ngày sinh" required>
+
+                        </div>
+                        <input type="tel" id="phone" placeholder="Số điện thoại của bạn *" required>
+
+                        <input type="text" id="address" placeholder="Địa chỉ của bạn" required>
+                        <div class="login-text">
+                            Bạn đã sẵn sàng<a href="login.html"> Đăng nhập</a>
+                        </div>
+
+                        <div class="btn-block-wrap">
+                            <div class="primary-button">
+                                <a href="#" class="links w-inline-block" onclick="register(event)">
+                                    <div class="link-text top-btn-text padding-none">ĐĂNG KÝ</div>
+                                    <div class="link-text bottom-btn-text">ĐĂNG KÝ</div>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="signup.js"></script>
+    <script>
+        function register(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+            // Lấy dữ liệu từ các trường input
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const passwordConfirmation = document.getElementById('password_confirmation').value;
+            const gender = document.getElementById('gender').value;
+            const birthday = document.getElementById('birthday').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            const serverIp = "172.20.10.3"; // Đổi IP thành địa chỉ server API của bạn
+            const serverPort = "8000";
+
+            fetch(`http://${serverIp}:${serverPort}/api/register`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    password: password,
+                    password_confirmation: passwordConfirmation,
+                    gender: gender,
+                    birthday: birthday,
+                    phone: phone,
+                    address: address
+                })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(err => {
+                            throw new Error(err.message || 'Đăng ký thất bại.');
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert('Đăng ký thành công! Chào mừng, ' + name);
+                    // Chuyển hướng đến trang đăng nhập
+                    window.location.href = "login.html";
+                })
+                .catch(error => {
+                    console.error('Lỗi:', error);
+                    alert('Đăng ký thất bại: ' + error.message);
+                });
+        }
+    </script>
+</body>
+
+</html>

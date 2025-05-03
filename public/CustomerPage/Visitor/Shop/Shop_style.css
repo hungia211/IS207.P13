@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+
+/* Default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    color: #121212;
+    font-size: 1.12vw;
+    font-weight: 400;
+    line-height: 130%;
+}
+  
+h1 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 4.65vw;
+    font-weight: 600;
+    line-height: 140%;
+}
+  
+h2 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 3.8vw;
+    font-weight: 600;
+    line-height: 120%;
+}
+  
+h3 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.7vw;
+    font-weight: 500;
+    line-height: 120%;
+  }
+  
+h4 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2vw;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  
+h5 {
+    color: #121212;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.45vw;
+    font-weight: 500;
+    line-height: 120%;
+}
+  
+h6 {
+    color: #121212;
+    letter-spacing: .03vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.19vw;
+    font-weight: 500;
+    line-height: 120%;
+}
+  
+p {
+    letter-spacing: .03vw;
+    margin-bottom: 0;
+    font-size: 0.98vw;
+}
+  
+a {
+    color: #121212;
+    letter-spacing: .03vw;
+    font-size: 0.9vw;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: none;
+}
+
+hr {
+    height: 1px;
+    background-color: #D2D2D7;
+    border: none;
+}
+
+/* body và html */
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home-page-main {
+    margin-top: 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*----------------------------------------------Thiết kế main-title----------------------------------------------*/
+
+.main-title {
+    display: grid; 
+    grid-template-rows: 1fr 1fr; 
+    border-right: 1px solid #121212;
+    height: 100vh; /* Chiều cao toàn màn hình */
+    position: sticky; /* Cố định khi scroll */
+    top: 0; /* Cố định từ đầu trang */
+    overflow: hidden; /* Ẩn nội dung vượt ra ngoài */
+    padding: 80px;
+    gap: 20px;
+    border-bottom: 1px solid #121212;
+}
+
+
+.title-head {
+    display: flex; /* Sử dụng layout dạng flexbox để sắp xếp các phần tử con */
+    flex-direction: column; /* Sắp xếp các phần tử con theo trục dọc (từ trên xuống dưới) */
+    text-align: left; /* Canh chữ trong nội dung văn bản về phía bên trái */
+    justify-content: flex-end; /* Đưa nội dung xuống phía dưới */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #121212;
+}
+
+.title-detail {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 0; /* Không có khoảng cách giữa các cột và hàng trong grid */
+    height: 213.5px;
+}
+
+.detail-image {
+    width: 100%; /* Đặt chiều rộng cố định cho container hình ảnh */
+    border-right: 1px solid #121212; /* Thêm đường viền bên phải màu đen dày 1px */
+    box-sizing: border-box; /* Tính cả padding và border vào kích thước tổng của phần tử */
+    display: flex; /* Sử dụng flexbox để sắp xếp nội dung bên trong */
+    justify-content: left; /* Canh giữa nội dung theo chiều ngang */
+    align-items: center; /* Canh giữa nội dung theo chiều dọc */
+    padding-right: 20px;
+}
+
+.detail-image img {
+    width: 100%; /* Hình ảnh không vượt quá chiều rộng của container */
+    height: 100%; /* Hình ảnh không vượt quá chiều cao của container */
+    object-fit: cover; /* Lấp đầy container và giữ nguyên tỷ lệ ảnh */
+    object-position: center; /* Căn giữa ảnh trong container */
+}
+
+.detail-text {
+    display: flex; /* Sử dụng layout dạng flexbox để sắp xếp các phần tử con */
+    flex-direction: column; /* Sắp xếp các phần tử con theo trục dọc (từ trên xuống dưới) */
+    width: 100%; /* Chiều rộng của phần tử chiếm toàn bộ container cha */
+    font-size: 15.0528px; /* Đặt kích thước chữ */
+    text-align: left; /* Căn giữa nội dung chính theo chiều ngang */
+    justify-content: flex-end; /* Đưa nội dung xuống phía dưới */
+    padding-left: 20px;
+}
+
+/*----------------------------------------------Thiết kế main-product----------------------------------------------*/
+.main-product {
+    display: grid;
+    grid-template-rows: 384px; 
+    grid-template-rows: repeat(auto-fill, 384px); 
+    overflow-y: auto; 
+    scrollbar-width: none; 
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+}
+
+.product-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+    height: 384px; /* Chiều cao cố định của mỗi ô */
+    width: 100%; /* Chiều rộng chiếm toàn bộ không gian */
+}
+
+.shop-section-left {
+    display: flex; /* Sử dụng Flexbox để sắp xếp nội dung bên trong */
+    flex-direction: column; /* Sắp xếp các phần tử con theo trục dọc */
+    justify-content: center; /* Canh giữa các phần tử theo chiều dọc */
+    align-items: center; /* Canh giữa các phần tử theo chiều ngang */
+    border-bottom: 1px solid black; /* Đường viền bên dưới tạo khung cho phần tử */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+}
+
+.shop-section-right {
+    display: flex; /* Sử dụng Flexbox để sắp xếp nội dung bên trong */
+    flex-direction: column; /* Sắp xếp các phần tử con theo trục dọc */
+    justify-content: center; /* Canh giữa các phần tử theo chiều dọc */
+    align-items: center; /* Canh giữa các phần tử theo chiều ngang */
+    border-left: 1px solid #121212; /* Đường viền bên phải phân cách sản phẩm */
+    border-bottom: 1px solid black; /* Đường viền bên dưới tạo khung cho phần tử */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+}
+
+.shop-section-right a {
+    display: inline-block; /* Giúp thẻ <a> có thể xử lý khoảng cách */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    font-size: 17.2032px; /* Kích thước chữ của thẻ <a> */
+    color: #121212; /* Màu chữ của liên kết */
+    margin-top: 10px; /* Tạo khoảng cách phía trên thẻ <a> */
+    padding: 10px 15px; /* Thêm đệm bên trong cho dễ nhìn */
+    text-align: center; /* Căn giữa nội dung nếu cần */
+}
+
+.shop-section-right a:hover {
+    text-decoration: underline; /* Thêm gạch chân cho liên kết khi hover */
+}
+
+.shop-section-left a {
+    display: inline-block; /* Giúp thẻ <a> có thể xử lý khoảng cách */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    font-size: 17.2032px; /* Kích thước chữ của thẻ <a> */
+    color: #121212; /* Màu chữ của liên kết */
+    margin-top: 10px; /* Tạo khoảng cách phía trên thẻ <a> */
+    padding: 10px 15px; /* Thêm đệm bên trong cho dễ nhìn */
+    text-align: center; /* Căn giữa nội dung nếu cần */
+}
+
+.shop-section-left a:hover {
+    text-decoration: underline; /* Thêm gạch chân cho liên kết khi hover */
+}
+
+.shop-link {
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của liên kết */
+    color: #121212; /* Đặt màu chữ của liên kết */
+}
+
+.shop-image-right {
+    width: 100%;
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+    overflow: hidden; /* Ẩn nội dung tràn ra khỏi khu vực hình ảnh */
+    border-left: 1px solid #121212; /* Đường viền bên phải phân cách sản phẩm */
+    border-bottom: 1px solid #121212; /* Đường viền bên dưới tạo khung */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+    position: relative; /* Tạo bối cảnh định vị cho các phần tử con */
+}
+
+.shop-image-left {
+    width: 100%;
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+    overflow: hidden; /* Ẩn nội dung tràn ra khỏi khu vực hình ảnh */
+    border-bottom: 1px solid #121212; /* Đường viền bên dưới tạo khung */
+    box-sizing: border-box; /* Bao gồm padding và border vào tổng kích thước phần tử */
+    position: relative; /* Tạo bối cảnh định vị cho các phần tử con */
+}
+
+.shop-image-right a {
+    display: block; /* Liên kết được định dạng như một khối để bao trọn toàn bộ nội dung */
+    width: 100%; /* Chiều rộng chiếm toàn bộ container cha */
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+}
+
+.shop-image-right img {
+    width: 100%; /* Hình ảnh sẽ mở rộng để chiếm toàn bộ chiều rộng của container */
+    height: 100%; /* Hình ảnh sẽ mở rộng để chiếm toàn bộ chiều cao của container */
+    transition: transform 0.3s ease; /* Hiệu ứng mượt khi zoom */
+    object-fit: cover; /* Hình ảnh được cắt xén và phóng to để phù hợp với container, giữ nguyên tỷ lệ */
+    object-position: center; /* Căn hình ảnh vào giữa container */
+}
+
+.shop-image-right:hover img {
+    transform: scale(1.1); 
+}
+
+.shop-image-left a {
+    display: block; /* Liên kết được định dạng như một khối để bao trọn toàn bộ nội dung */
+    width: 100%; /* Chiều rộng chiếm toàn bộ container cha */
+    height: 100%; /* Chiều cao chiếm toàn bộ container cha */
+}
+
+.shop-image-left img {
+    width: 100%; /* Hình ảnh sẽ mở rộng để chiếm toàn bộ chiều rộng của container */
+    height: 100%; /* Hình ảnh sẽ mở rộng để chiếm toàn bộ chiều cao của container */
+    transition: transform 0.3s ease; /* Hiệu ứng mượt khi zoom */
+    object-fit: cover; /* Hình ảnh được cắt xén và phóng to để phù hợp với container, giữ nguyên tỷ lệ */
+    object-position: center; /* Căn hình ảnh vào giữa container */
+}
+
+.shop-image-left:hover img {
+    transform: scale(1.1); 
+}
